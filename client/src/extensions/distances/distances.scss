@@ -1,0 +1,56 @@
+@import 'src/global.scss';
+
+.distances {
+  flex-wrap: nowrap !important;
+
+  .sideBar {
+    min-width: 400px;
+    margin-left: 15px;
+  }
+
+  .mainBar {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+
+    .distancesSettings {
+      padding: 10px 20px 0 20px;
+    }
+
+    .distancesRecords {
+      max-height: 60vh;
+      max-width: 510px;
+      overflow-y: auto;
+
+      .row {
+        @include touchableOpacity(5px);
+        padding: 0 5px;
+
+        &.selected {
+          background-color: #ffc27230;
+          border-radius: 5px;
+
+          .compared .label {
+            color: #90caf9;
+          }
+        }
+      }
+    }
+
+    .fa-folder {
+      color: #ffca28;
+    }
+
+    .fa-file {
+      color: #90caf9;
+    }
+
+    .uploadWrapper {
+      padding: 10px 5px;
+    }
+
+    .displayImagesIcon {
+      margin-left: 10px;
+    }
+  }
+}

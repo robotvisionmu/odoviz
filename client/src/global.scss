@@ -1,0 +1,12 @@
+@mixin touchableOpacity($radius: 0, $scale: 1) {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background-color: #ffffff22;
+    border-radius: $radius;
+    transform: scale($scale);
+  }
+  &:active {
+    background-color: #00000022;
+  }
+}

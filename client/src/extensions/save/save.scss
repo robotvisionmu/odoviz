@@ -1,0 +1,30 @@
+@import 'src/global.scss';
+
+.save {
+  padding: 10px;
+
+  .saveLayout {
+    border-radius: 4px;
+    transition: all 500ms ease-in-out;
+    align-items: center;
+
+    &:hover {
+      transition: all 100ms ease-in-out;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .title {
+      padding: 10px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+    }
+
+    .wrapper {
+      .button {
+        @include touchableOpacity(3px, 1.2);
+        padding: 5px 10px;
+      }
+    }
+  }
+}

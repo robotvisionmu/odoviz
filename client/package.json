@@ -1,0 +1,69 @@
+{
+  "name": "odoviz-react-client",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/robotvisionmu/odoviz/tree/main/client",
+  "author": "Saravanabalagi Ramachandran <saravanabalagi@hotmail.com>",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@material-ui/core": "^4.9.7",
+    "@material-ui/lab": "^4.0.0-alpha.58",
+    "@tweenjs/tween.js": "^18.3.1",
+    "classnames": "^2.2.6",
+    "deep-equal": "^2.0.3",
+    "jszip": "^3.2.2",
+    "leaflet": "^1.5.1",
+    "node-sass-chokidar": "^1.3.5",
+    "npm-run-all": "^4.1.5",
+    "npyjs": "^0.1.3",
+    "numjs": "nicolaspanel/numjs",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-leaflet": "^2.4.0",
+    "react-octicon": "^3.0.1",
+    "react-redux": "^7.1.0",
+    "react-scripts": "3.0.1",
+    "react-toastify": "^5.3.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.0.3",
+    "redux-thunk": "^2.3.0",
+    "three": "^0.105.2"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/",
+    "lint:fix": "eslint --fix --ext .js,.jsx src/",
+    "pretty": "prettier src/",
+    "pretty:fix": "prettier --write src/",
+    "build-license": "npx license-checker-rseidelsohn@1.2.2 --relativeLicensePath --relativeModulePath --json --out src/extensions/about/licenses.json"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "homepage": ".",
+  "proxy": "http://localhost:3001",
+  "devDependencies": {
+    "eslint-plugin-import": "^2.23.4",
+    "prettier": "^2.3.2"
+  }
+}

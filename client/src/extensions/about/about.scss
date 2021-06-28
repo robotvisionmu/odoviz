@@ -1,0 +1,55 @@
+.about {
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    flex: 1;
+  }
+
+  .aboutWrapper {
+    padding: 10px 15px;
+    flex: 1;
+    .link {
+      color: #ffc272;
+    }
+    .dependencies {
+      color: #dddddd;
+      margin-bottom: 10px;
+      padding: 0 15px;
+      display: flex;
+      flex: 1;
+      flex-wrap: unset;
+      flex-direction: column;
+      max-height: 30vh;
+      overflow-y: auto;
+      .name {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .license {
+        max-width: 200px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .version {
+        opacity: 0;
+        transition: opacity 3000ms ease-in-out;
+        color: #90caf9;
+      }
+      .row {
+        &:hover .version {
+          visibility: visible;
+          opacity: 1;
+          transition: opacity 50ms ease-in-out;
+        }
+      }
+    }
+  }
+
+  .number input {
+    text-align: right;
+  }
+}

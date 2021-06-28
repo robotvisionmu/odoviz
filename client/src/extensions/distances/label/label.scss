@@ -1,0 +1,19 @@
+.labelWrapper {
+  min-width: 50px;
+  text-align: right;
+
+  .label {
+    &.query {
+      color: #ffc272;
+    }
+
+    .index {
+      text-align: left;
+      display: inline-block;
+      padding: 0 2px;
+      width: 15px;
+      font-size: 10px;
+      color: #cccccc;
+    }
+  }
+}

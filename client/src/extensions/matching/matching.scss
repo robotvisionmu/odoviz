@@ -1,0 +1,39 @@
+@import 'src/global.scss';
+
+.matching {
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    flex: 1;
+  }
+
+  .matchingWrapper {
+    padding: 10px 5px;
+    font-size: 12px;
+    height: 100%;
+
+    > div:first-child {
+      padding-top: 15px;
+    }
+
+    .closeButton {
+      @include touchableOpacity(10px, 1.2);
+      color: #ff2222;
+    }
+
+    .displayButton {
+      @include touchableOpacity(10px, 1.2);
+      color: #32b10c;
+    }
+
+    .yellow {
+      color: #ffc272;
+    }
+  }
+
+  .progress {
+    margin-left: 10px;
+  }
+}

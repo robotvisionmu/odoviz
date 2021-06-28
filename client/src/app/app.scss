@@ -1,0 +1,70 @@
+@import 'src/global.scss';
+
+.app {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 14px;
+
+  .MuiInput-underline {
+    &:hover:not(.Mui-disabled):before,
+    &:before {
+      border-color: #666666;
+    }
+    &:after {
+      border-color: #cccccc;
+    }
+  }
+
+  .MuiInputBase-root {
+    color: #cccccc;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+.mainView {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.Toastify__toast.myToastContainer {
+  font-family: inherit;
+  border-radius: 4px;
+
+  .Toastify__toast-body {
+    margin: auto 10px;
+  }
+
+  .Toastify__close-button {
+    margin-top: -3px;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  @include touchableOpacity(3px, 1.05);
+  padding: 8px 12px;
+  background-color: #444444;
+  border-radius: 3px;
+
+  .caption {
+    font-size: 12px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+
+    > span {
+      &:not(:first-child) {
+        font-size: 10px;
+        padding-top: 3px;
+      }
+    }
+  }
+}

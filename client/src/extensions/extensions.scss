@@ -1,0 +1,187 @@
+@import 'src/global.scss';
+
+.extensions-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  bottom: 0;
+  width: 39px;
+  border-right: 1px solid #ffffff66;
+
+  > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff22;
+
+    //Dark Themed Slider
+    .MuiSlider-markLabel {
+      font-size: 11px;
+      color: #aaaaaa;
+      pointer-events: none;
+
+      &.MuiSlider-markLabelActive {
+        color: #eeeeee;
+      }
+    }
+    .slider.MuiSlider-root {
+      color: #90caf9;
+
+      .MuiSlider-thumb:hover {
+        box-shadow: 0 0 0 8px #90caf944;
+      }
+    }
+
+    > .extension-wrapper {
+      &.hidden {
+        display: none;
+      }
+      position: relative;
+
+      > .extension-icon {
+        @include touchableOpacity;
+        padding: 20px 10px;
+        margin-right: -1px;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+
+        svg[class*='fa-'] {
+          &.fa-expand-arrows-alt {
+            transform: rotateX(60deg) rotateZ(20deg);
+          }
+          &.fa-ruler-horizontal {
+            transform: scale(0.8);
+          }
+
+          &.fa-map-marker-alt {
+            transform: scale(1.1);
+          }
+
+          &.fa-cog {
+            g g path {
+              stroke: #333333;
+              stroke-width: 40;
+            }
+          }
+
+          &.fa-expand-arrows-alt {
+            g g path {
+              stroke: #333333;
+              stroke-width: 20;
+            }
+
+            transform: translate(0, 5px);
+          }
+
+          transition: all 300ms ease-in-out;
+        }
+
+        &.active {
+          background-color: #333333;
+          border-bottom: 1px solid #ffffff66;
+          border-top: 1px solid #ffffff66;
+
+          svg[class*='fa-'] {
+            transform: scale(1.2);
+
+            &.fa-cog {
+              transform: scale(1.2) rotateZ(60deg);
+            }
+
+            &.fa-arrows-alt-h {
+              transform: scaleX(1.3);
+            }
+
+            &.fa-images {
+              transform: scale(0.9);
+            }
+
+            &.fa-expand-arrows-alt {
+              transform: scale(1.4) rotateX(60deg) rotateZ(65deg) translate(5px);
+            }
+
+            &.fa-ruler-horizontal {
+              transform: scale(1.1) translate(7px, -10px) rotate(-90deg);
+            }
+
+            &.fa-map-marker-alt {
+              transform: scale(0.9) translate(-4px, 3px);
+            }
+          }
+        }
+      }
+
+      // Start position for lower extensions to be higher
+      // &:nth-child(n+3) { > .extension {top: -100px;} }
+      &:nth-child(n + 5) {
+        > .extension {
+          top: -200px;
+        }
+      }
+
+      &:nth-child(n + 7) {
+        > .extension {
+          top: -250px;
+        }
+      }
+
+      &:nth-child(n + 9) {
+        > .extension {
+          top: -300px;
+        }
+      }
+
+      &:nth-child(n + 11) {
+        > .extension {
+          top: -350px;
+        }
+      }
+
+      > .extension {
+        &.hidden {
+          display: none;
+        }
+        display: flex;
+
+        > div {
+          flex: 1;
+
+          .title {
+            flex: 1;
+            font-size: 15px;
+            padding: 10px;
+          }
+        }
+
+        min-width: 400px;
+        min-height: 400px;
+        position: absolute;
+        left: 40px;
+        top: 0;
+        padding: 10px;
+        background-color: #333333;
+        border-right: 1px solid #ffffff66;
+        border-bottom: 1px solid #ffffff66;
+        border-top: 1px solid #ffffff66;
+      }
+    }
+
+    svg[class*='fa-'].pinned {
+      color: #ffc272;
+      transform: scale(1.4);
+    }
+  }
+
+  .extensions {
+    flex: 1;
+  }
+
+  .extensions-extra {
+    > li > .extension {
+      top: unset;
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+node_modules
+
+# build dir
+build/
+
+# add scss files instead of css
+*.css

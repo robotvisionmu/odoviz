@@ -1,0 +1,14 @@
+@import 'src/global.scss';
+
+.locations {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+
+  > div {
+    flex: 1;
+    .uploadWrapper {
+      padding: 10px 5px;
+    }
+  }
+}

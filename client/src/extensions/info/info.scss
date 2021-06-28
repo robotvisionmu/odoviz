@@ -1,0 +1,40 @@
+@import 'src/global.scss';
+
+.info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .infoTable {
+    flex: 1;
+    .row {
+      @include touchableOpacity(5px);
+
+      .value {
+        text-align: right;
+      }
+
+      .link {
+        &:hover {
+          color: #32c9ff;
+          cursor: pointer;
+        }
+        &.gmaps-link:hover {
+          color: #32b10c;
+        }
+        &.gmaps-sv-link:hover {
+          color: #fcc808;
+        }
+      }
+    }
+  }
+
+  div.bottomBar {
+    margin-top: 15px;
+    margin-bottom: -10px;
+    padding: 8px 8px 3px 8px;
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid #ffffff66;
+  }
+}

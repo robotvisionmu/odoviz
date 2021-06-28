@@ -1,0 +1,82 @@
+.imageViewer {
+  display: flex;
+  flex-direction: column;
+
+  .imageWrapper {
+    position: relative;
+  }
+
+  .image {
+    img {
+      width: 400px;
+    }
+  }
+
+  .caption {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+
+    .imageInfo {
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .imagePath {
+      font-size: 10px;
+    }
+  }
+
+  .mapWrapper {
+    position: relative;
+    width: 100%;
+
+    .map {
+      height: 180px;
+      .leaflet-control-attribution.leaflet-control {
+        opacity: 0;
+        display: none;
+      }
+      // .leaflet-control-zoom-in { background-color: #AAA; border-bottom-color: #333; }
+      // .leaflet-control-zoom-out { background-color: #AAA; }
+    }
+
+    .mapLinks {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      z-index: 99999;
+      width: auto;
+    }
+
+    .link {
+      color: #444;
+      font-size: 18px;
+      &:hover {
+        color: #32c9ff;
+        cursor: pointer;
+      }
+      &.gmaps-link:hover {
+        color: #258109;
+      }
+      &.gmaps-sv-link:hover {
+        color: #dbae0a;
+      }
+    }
+  }
+
+  .noGps {
+    padding: 10px;
+    > div {
+      padding: 5px 0;
+    }
+  }
+
+  div.bottomBar {
+    padding: 8px 8px 3px 8px;
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid #ffffff66;
+  }
+}

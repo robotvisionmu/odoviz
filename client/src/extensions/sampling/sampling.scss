@@ -1,0 +1,30 @@
+.sampling {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    flex: 1;
+  }
+
+  .samplingWrapper {
+    padding: 10px 15px;
+    height: 100%;
+
+    .row {
+      padding: 10px 0;
+    }
+    .hidden {
+      display: none;
+    }
+    .slidersWrapper {
+      margin-top: -3px;
+      .number {
+        width: 50px;
+      }
+    }
+  }
+
+  .number input {
+    text-align: right;
+  }
+}
