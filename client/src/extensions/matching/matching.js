@@ -123,8 +123,8 @@ class Matching extends Component {
     const carsGroup = scene.getObjectByName('cars');
     if (carsGroup) carsSubgroups = carsGroup.children;
 
-    const queryCars = carsSubgroups[0].children.map((car) => car.data);
-    const refCarsArray = carsSubgroups.slice(1).map((carsSubgroup) => carsSubgroup.children.map((car) => car.data));
+    const queryCars = carsSubgroups[0].children;
+    const refCarsArray = carsSubgroups.slice(1).map((carsSubgroup) => carsSubgroup.children);
     exportPoses(queryCars, refCarsArray);
   };
 

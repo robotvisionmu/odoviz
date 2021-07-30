@@ -20,7 +20,7 @@ The app is fully functional offline after the initial page load, except for the 
 
 ## Serving dataset files
 
-The web-client expect the dataset files to be downloadable at `/files`, with an [autoindex JSON API](https://www.npmjs.com/package/autoindex-json) conforming to [NGINX JSON autoindex](http://nginx.org/en/docs/http/ngx_http_autoindex_module.html#autoindex_format) output standards for browsing the data directories at `/files?path=<path>`.
+The web-client expect the dataset files to be downloadable at `/files`, with an [autoindex JSON API](https://www.npmjs.com/package/autoindex-json) conforming to [NGINX JSON autoindex](http://nginx.org/en/docs/http/ngx_http_autoindex_module.html#autoindex_format) output standards for browsing the data directories at `/files/<path>`.
 
 ## Setting up with a Custom Server
 

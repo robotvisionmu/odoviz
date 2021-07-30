@@ -11,7 +11,7 @@ const PORT = process.env.ODOVIZ_PORT || 3000;
 const DATA_DIR = process.env.ODOVIZ_DATA_DIR;
 
 if (DATA_DIR == null) {
-  console.error("Please specify ODOVIZ_DATA_DIR environment variable before initializing OdoViz");
+  console.error('Please specify ODOVIZ_DATA_DIR environment variable before initializing OdoViz');
   process.exit();
 }
 

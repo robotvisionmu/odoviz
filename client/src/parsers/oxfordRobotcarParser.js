@@ -34,7 +34,7 @@ async function parseFn(data, filePath) {
   console.debug('Total INS timestamps', dataLines.length);
 
   const imageFolder = getImgPath(null, filePath);
-  const response = await fetch(`/files?path=${imageFolder}`);
+  const response = await fetch(`/files/${imageFolder}`);
   const responseData = await response.json();
   const filenames = responseData
     .filter((f) => f.type === 'file')

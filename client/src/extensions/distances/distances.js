@@ -40,8 +40,7 @@ class Distances extends Component {
     this.state = {
       loading: null,
       error: null,
-      sideBar: false,
-      imagesToDisplay: {},
+      sideBar: true,
       selectedIndex: null,
       compareIndex: 1,
       localTopKToDisplay: props.topKToDisplay,
@@ -97,8 +96,8 @@ class Distances extends Component {
     this.setState({ loading: false });
   };
 
-  setImagesToDisplay = (e) => {
-    const i = parseInt(e.currentTarget.getAttribute('i'));
+  getImagesToDisplay = (i) => {
+    if (i == null) return {};
     const { distancesNpzs, currentDistancesIndex, topKToDisplay, skip0thMatch } = this.props;
     const distances = distancesNpzs && distancesNpzs[currentDistancesIndex];
     const imagesToDisplay = [...Array(topKToDisplay + skip0thMatch).keys()].reduce((result, j, dict_index) => {
@@ -107,7 +106,7 @@ class Distances extends Component {
       result[dict_index] = [this.getImagePath(label, index), [label, index]];
       return result;
     }, {});
-    this.setState({ imagesToDisplay, sideBar: true, selectedIndex: i });
+    return imagesToDisplay;
   };
 
   getImagePath = (label, index) => {
@@ -127,6 +126,15 @@ class Distances extends Component {
     this.setState({ compareIndex: index });
   };
 
+  setSelectedIndex = (index) => {
+    this.setState({ selectedIndex: index });
+  };
+
+  handleSetSelectedIndex = (e) => {
+    const index = parseInt(e.currentTarget.getAttribute('i'));
+    this.setSelectedIndex(index);
+  };
+
   handleSetCompareIndex = (e) => {
     const index = parseInt(e.currentTarget.getAttribute('j'));
     this.setCompareIndex(index);
@@ -137,8 +145,8 @@ class Distances extends Component {
   };
 
   handleSetTopKDisplay = (e, value) => {
+    this.setState((s) => ({ localTopKToDisplay: value, compareIndex: s.compareIndex > value ? 1 : s.compareIndex }));
     this.props.setTopKToDisplay(value);
-    this.setState({ localTopKToDisplay: value });
   };
 
   handleSetSkip0thMatch = (e, value) => {
@@ -164,7 +172,8 @@ class Distances extends Component {
     const { loading, error, sideBar } = this.state;
     const { topKToDisplay, skip0thMatch, dataFile, dataJson, distancesNpzs, distancesFiles, currentDistancesIndex } =
       this.props;
-    const { imagesToDisplay, selectedIndex, compareIndex, localTopKToDisplay } = this.state;
+    const { selectedIndex, compareIndex, localTopKToDisplay } = this.state;
+    const imagesToDisplay = this.getImagesToDisplay(selectedIndex);
 
     const steps = this.getAllSteps();
     const distanceIndexMarks = steps.map((step, i) => ({
@@ -319,7 +328,7 @@ class Distances extends Component {
                           className={classnames('row', { selected: i === selectedIndex })}
                           key={i}
                           i={i}
-                          onClick={this.setImagesToDisplay}
+                          onClick={this.handleSetSelectedIndex}
                         >
                           <Grid container spacing={1} direction={'row'} wrap={'nowrap'}>
                             <Grid item className={'displayImagesIcon'}>

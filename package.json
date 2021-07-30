@@ -1,12 +1,12 @@
 {
   "name": "odoviz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A reactive web-based odometry 3D visualization and processing tool",
   "repository": "git@github.com:robotvisionmu/odoviz.git",
   "author": "Saravanabalagi Ramachandran <saravanabalagi@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-    "autoindex-json": "^0.2.0",
+    "autoindex-json": "^1.0.0",
     "express": "^4.17.1",
     "express-pino-logger": "^4.0.0",
     "pino-colada": "^1.4.4"

@@ -81,7 +81,7 @@ class Explorer extends Component {
   fetchDir = async (path) => {
     this.setState({ loading: true });
     try {
-      const response = await fetch(`/files?path=${path}`);
+      const response = await fetch(`/files/${path}`);
       if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
       const data = await response.json();
       this.setState({ files: data || [], loading: false, error: data.error });

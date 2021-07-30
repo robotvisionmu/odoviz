@@ -130,7 +130,7 @@ function exportPoses(queryCars, matchedCarsArray) {
     // and add them based on query index inside
     for (let i = 0; i < matchedCars.length; i++) {
       const matchedCar = matchedCars[i];
-      classes[matchedCar.samplingIndex].push(matchedCar);
+      classes[matchedCar.data.matchingForSamplingIndex].push(matchedCar);
     }
   }
 
@@ -138,7 +138,7 @@ function exportPoses(queryCars, matchedCarsArray) {
   Object.entries(classes).forEach(([key, values]) => {
     classesWithPath[key] = [];
     values.forEach((car) => {
-      const imagePath = getImgPath(car.image.value, car.parent.name);
+      const imagePath = getImgPath(car.data.image.stereo_centre, car.parent.name);
       classesWithPath[key].push(imagePath);
     });
   });
