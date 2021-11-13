@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faHeart, faCode } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faCode, faStickyNote } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Grid, Link, Tooltip } from '@material-ui/core';
 
@@ -25,7 +25,25 @@ class About extends Component {
     } else return 'unknown';
   };
 
+  copyCitation = () => {
+    const text = `@INPROCEEDINGS{9564712,
+  author={Ramachandran, Saravanabalagi and McDonald, John},
+  booktitle={2021 IEEE International Intelligent Transportation Systems Conference (ITSC)},
+  title={OdoViz: A 3D Odometry Visualization and Processing Tool},
+  year={2021},
+  pages={1391-1398},
+  doi={10.1109/ITSC48978.2021.9564712}}`;
+    const textBox = document.createElement('textarea');
+    textBox.innerHTML = text;
+    document.body.appendChild(textBox);
+    textBox.select();
+    const result = document.execCommand('copy');
+    document.body.removeChild(textBox);
+    return result;
+  };
+
   render() {
+    const paperLink = 'https://ieeexplore.ieee.org/document/9564712';
     return (
       <div className="about">
         <Grid container direction={'column'}>
@@ -36,7 +54,10 @@ class About extends Component {
           <Grid item xs>
             <Grid container spacing={1} direction="column" className="aboutWrapper">
               <Grid item>
-                <p>This is an open-source and free to use software.</p>
+                <p style={{ lineHeight: 1.7 }}>
+                  This is an open-source and free to use software. If you use this software and/or its code, please cite
+                  this paper using link given below.
+                </p>
               </Grid>
 
               <Grid item>
@@ -97,6 +118,24 @@ class About extends Component {
                     >
                       <FontAwesomeIcon icon={faGithub} />
                       <span className="link"> Repo</span>
+                    </Link>
+                  </Grid>
+                </Grid>
+              </Grid>
+
+              <Grid item>
+                <Grid container direction="row">
+                  <Grid item xs>
+                    Publication
+                  </Grid>
+                  <Grid item>
+                    <Link href={paperLink} target="_blank" rel="noopener noreferrer" color="inherit">
+                      <FontAwesomeIcon icon={faStickyNote} color={'#90caf9'} />
+                      <span> ITSC 2021</span>
+                    </Link>
+                    <span> | </span>
+                    <Link href="#" color="inherit" onClick={this.copyCitation} underline="none">
+                      <span class="link">Copy Citation</span>
                     </Link>
                   </Grid>
                 </Grid>

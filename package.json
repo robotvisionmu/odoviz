@@ -1,6 +1,6 @@
 {
   "name": "odoviz",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A reactive web-based odometry 3D visualization and processing tool",
   "repository": "git@github.com:robotvisionmu/odoviz.git",
   "author": "Saravanabalagi Ramachandran <saravanabalagi@hotmail.com>",
