@@ -8,9 +8,12 @@
 [![Licence](https://img.shields.io/badge/Licence-MIT-292)](LICENSE)
 [![Website](https://img.shields.io/badge/Website-odoviz.cs.nuim.ie-blue)](https://odoviz.cs.nuim.ie/)
 
-OdoViz is a reactive web-based tool for 3D visualization and processing of autonomous vehicle datasets designed to support common tasks in visual place recognition research.
-
+OdoViz is a reactive web-based tool for 3D visualization and processing of autonomous vehicle datasets designed to support common tasks in visual place recognition research. Comes with out of the box support for [popular driving datasets](client/src/parsers).
 </div>
+
+<br />
+
+[![Screencast](https://user-images.githubusercontent.com/8567893/146551114-2f4b3e92-052c-45af-ae87-4407f0981a6b.gif)](https://www.youtube.com/playlist?list=PLKIavzsN4tuGi1SKDSPss0M8v4zswVEn9)
 
 <br />
 
@@ -85,6 +88,14 @@ You can access the hosted instance from the [official website](https://odoviz.cs
 
 For general questions and queries, open a new thread in [discussions](https://github.com/robotvisionmu/odoviz/discussions). If the software does not work as intended, please check the existing [issues](https://github.com/robotvisionmu/odoviz/issues) before raising a new issue. [Pull requests](https://github.com/robotvisionmu/odoviz/pulls) are welcome.
 
+## Similar Tools
+
+Odoviz is very useful for visualizing whole trajectories and global level tasks such as visualizing loop closures, identifying and analyzing pose correspondences, etc. If you are rather interested in primarily processing and visualisation at the local level of the vehicle, i.e. targeting egocentric tasks such as real-time visualisation and playback of vehicle sensor data, 3D object detection, etc., please take a look at:
+
+- Autonomous Visualization System by Uber: https://avs.auto
+- Webviz by Cruise: https://webviz.io
+- Open3D: https://open3d.org
+     
 ## Acknowledgements
 
 This work was supported by [Science Foundation Ireland](https://www.sfi.ie/) grant 13/RC/2094 to [Lero - the Irish Software Research Centre](https://lero.ie/) and grant 16/RI/3399 and [Maynooth University](https://www.maynoothuniversity.ie/). The website and the live instance is hosted by Department of Computer Science, Maynooth University.
